@@ -1,0 +1,6 @@
+<apex:page >
+ 
+<P>Username of logged in user is: {!$User.Username}</P>
+<P>First Name of the logged in user is{!$User.FirstName}</P>
+<P>Last Name of the logged in user is{!$User.LastName}</P>
+</apex:page>

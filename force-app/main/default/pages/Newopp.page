@@ -1,0 +1,36 @@
+<apex:page standardController="Opportunity" sidebar="false" extensions="DefaultStage">
+  <apex:form >
+    <apex:pageBlock title="New Opportunity">
+    <apex:pageBlockbuttons >
+        <apex:commandButton value="Save" action="{!save}" />
+        </apex:pageBlockbuttons>
+      
+     <apex:pageBlockSection title="Opportunity  Information 1"  columns="2" collapsible="false">
+         <apex:inputField value="{!opp.Name}"/>
+         <apex:inputField value="{!opp.CloseDate}"/>
+         <apex:inputField value="{!opp.StageName}"/>
+            </apex:pageBlockSection>
+   </apex:pageBlock>
+   </apex:form>
+   
+   <apex:form >
+          <apex:pageBlock title="Opportunities">
+             <apex:pageBlockTable value="{!Oppo1}" var="opp1">
+                  <apex:column headerValue="Action">
+                     <apex:commandLink value="Edit" action="{!EditOpp}" >
+                     <apex:param name="editopp" value="{!Opp1.Id}" assignTo="{!Oppid}" />
+                     </apex:commandLink>
+                     </apex:column>
+                     <apex:column headerValue="Action">
+                     <apex:commandLink value="Delete" action="{!delopp}" >
+                     <apex:param name="delopp" value="{!Opp1.Id}" assignTo="{!Oppid}" />
+                     </apex:commandLink>
+                     </apex:column>
+                     
+                <apex:column value="{!opp1.Name}"/>
+                <apex:column value="{!opp1.CloseDate}"/>
+                <apex:column value="{!opp1.StageName}"/>
+           </apex:pageBlockTable>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>
