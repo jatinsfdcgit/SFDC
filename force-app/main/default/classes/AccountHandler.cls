@@ -8,6 +8,7 @@ public class AccountHandler {
                   Account acct1 = new Account();
                     acct1.Name = AccName;
                    insert acct1;
+                   system.debug('Debug=====');
                return Null ;
                 } 
           catch (DmlException e) 
